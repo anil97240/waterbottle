@@ -33,14 +33,9 @@ public class MainActivity extends AppCompatActivity {
         btSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!emptyValidation()) {
-                    dbHelper.addUser(new User(edtEmail.getText().toString(), edtPassword.getText().toString()));
-                    Toast.makeText(MainActivity.this, "Added User", Toast.LENGTH_SHORT).show();
-                    edtEmail.setText("");
-                    edtPassword.setText("");
-                } else {
-                    Toast.makeText(MainActivity.this, "Empty Fields", Toast.LENGTH_SHORT).show();
-                }
+                Intent i = new Intent(getApplicationContext(), register.class);
+                startActivity(i);
+
             }
         });
         btSignIn.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent(MainActivity.this, UserActivity.class);
                         intent.putExtras(mBundle);
                         startActivity(intent);
+
                         Toast.makeText(MainActivity.this, "Welcome " + user.getEmail(), Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(MainActivity.this, "User not found", Toast.LENGTH_SHORT).show();
