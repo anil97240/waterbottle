@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".register"
+    tools:layout_editor_absoluteY="50dp">
+
+    <EditText
+        android:id="@+id/edtnm"
+        android:layout_width="211dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="26dp"
+        android:layout_marginTop="84dp"
+        android:ems="10"
+        android:hint="enter name"
+        android:inputType="textPersonName"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/edtmob"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtmob"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="6dp"
+        android:ems="10"
+        android:hint="enter mobile no"
+        android:inputType="phone"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/edtnm" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="120dp"
+        android:layout_height="26dp"
+        android:layout_marginBottom="206dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="230dp"
+        android:text="Upload image"
+        app:layout_constraintBottom_toTopOf="@+id/btnreg"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="22dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginTop="23dp"
+        android:onClick="addimage"
+        app:layout_constraintBottom_toTopOf="@+id/imgpro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/edtmob"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <Button
+        android:id="@+id/btnreg"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+
+        android:layout_marginBottom="51dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginStart="66dp"
+        android:onClick="register"
+        android:text="Register"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btncan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <Button
+        android:id="@+id/btncan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="47dp"
+        android:layout_marginEnd="85dp"
+        android:onClick="cancel"
+        android:text="cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnreg"
+        app:layout_constraintTop_toBottomOf="@+id/imgpro" />
+
+    <ImageView
+        android:id="@+id/imgpro"
+        android:layout_width="203dp"
+        android:layout_height="180dp"
+        android:layout_marginBottom="24dp"
+        app:layout_constraintBottom_toTopOf="@+id/btncan"
+        app:layout_constraintEnd_toStartOf="@+id/btncan"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/btncan"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:srcCompat="@android:drawable/editbox_dropdown_light_frame" />
+</android.support.constraint.ConstraintLayout>
