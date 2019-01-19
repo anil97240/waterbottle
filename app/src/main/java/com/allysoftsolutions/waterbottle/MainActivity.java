@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import database.DatabaseHelper;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button btSignIn;

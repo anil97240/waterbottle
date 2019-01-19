@@ -11,9 +11,9 @@
         android:layout_height="100dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="48dp"
-        android:background="@drawable/button_image_choose"
+
         android:clickable="true"
-        android:src="@drawable/ic_camera_alt_black_24dp"
+
         android:textAlignment="center"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toStartOf="@+id/btnGallery"
@@ -28,9 +28,9 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="48dp"
-        android:background="@drawable/button_image_choose"
+
         android:clickable="true"
-        android:src="@drawable/ic_photo_black_24dp"
+
         android:textAlignment="center"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"

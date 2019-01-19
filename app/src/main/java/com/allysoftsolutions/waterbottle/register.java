@@ -1,14 +1,13 @@
 package com.allysoftsolutions.waterbottle;
 
 import android.content.Intent;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -70,7 +69,7 @@ public class register extends AppCompatActivity {
 
 
     public void addimage(View view) {
-        if (view.getId() == R.id.imageViewUpload) {
+        if (view.getId() == R.id.imgpro) {
             openChooser();
         }
 
@@ -80,7 +79,7 @@ public class register extends AppCompatActivity {
         AlertDialog.Builder builder
                 = new AlertDialog.Builder(getApplicationContext());
 
-        View view = this.getLayoutInflater().inflate(R.layout.dialog_choose_image_layout, null);
+        View view = this.getLayoutInflater().inflate(R.layout.dialog_image_select, null);
 
         final ImageView btnCamera = view.findViewById(R.id.btnCamera);
         final ImageView btnGallery = view.findViewById(R.id.btnGallery);
@@ -145,7 +144,9 @@ public class register extends AppCompatActivity {
                     }
                     imageViewShow.setImageBitmap(photo);
                     //converting uploded image to string bytes
-                    if (photo != null)
+                    if (photo != null) {
+
+                    }
                        // streamOfImage = Usefull.getStringImage(photo);
                 }
                 break;
