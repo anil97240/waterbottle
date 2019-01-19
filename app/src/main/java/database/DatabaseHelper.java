@@ -1,20 +1,24 @@
-package com.allysoftsolutions.waterbottle;
+package database;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
+
+import com.allysoftsolutions.waterbottle.User;
 
 /**
  * Created by Zoom on 10/1/2018.
  */
 
-public class DatabaseHelper extends SQLiteOpenHelper {
 
+public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context, DatabaseOptions.DB_NAME, null, DatabaseOptions.DB_VERSION);
+
     }
 
     @Override
@@ -54,9 +58,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(DatabaseOptions.EMAIL, user.getEmail());
         values.put(DatabaseOptions.PASSWORD, user.getPassword());
+        values.put(DatabaseOptions.PROFILE_IMAGE, user.getPassword());
 
         // Inserting Row
         db.insert(DatabaseOptions.USERS_TABLE, null, values);
+
         db.close(); // Closing database connection
 
     }
