@@ -21,6 +21,10 @@
         <activity
             android:name=".register"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <activity android:name=".UserActivity">
+
+        </activity>
     </application>
 
 </manifest>

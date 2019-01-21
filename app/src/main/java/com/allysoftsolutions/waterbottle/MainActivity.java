@@ -40,14 +40,12 @@ public class MainActivity extends AppCompatActivity {
         edtEmail = findViewById(R.id.emailinput);
         edtPassword = findViewById(R.id.passwordinput);
 
-        //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
             startActivity(new Intent(MainActivity.this, UserActivity.class));
             finish();
         }
-
 
         btSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
