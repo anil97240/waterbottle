@@ -1,4 +1,4 @@
-package database;
+package com.allysoftsolutions.waterbottle.database;
 
 /**
  * Created by Zoom on 10/1/2018.

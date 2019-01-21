@@ -15,6 +15,7 @@ public class User {
     public User(String email, String password,String profile_image) {
         this.email = email;
         this.password = password;
+        this.profile_image=profile_image;
 
     }
 
@@ -70,7 +71,7 @@ public class User {
                 "id=" + id +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", password='" + profile_image + '\'' +
+                ", profile_image='" + profile_image + '\'' +
                 '}';
     }
 }

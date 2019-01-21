@@ -1,11 +1,10 @@
-package database;
+package com.allysoftsolutions.waterbottle.database;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 import com.allysoftsolutions.waterbottle.User;
 
@@ -63,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // Inserting Row
         db.insert(DatabaseOptions.USERS_TABLE, null, values);
 
-        db.close(); // Closing database connection
+        db.close(); // Closing com.allysoftsolutions.waterbottle.database connection
 
     }
 

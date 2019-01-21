@@ -13,36 +13,39 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import java.io.IOException;
+import com.allysoftsolutions.waterbottle.database.DatabaseHelper;
 
-import database.DatabaseHelper;
+import java.io.IOException;
 
 public class register extends AppCompatActivity {
 
 
     private final int REQUEST_IMG = 1;
-    private boolean isCamera;
     ImageView imageViewShow;
     //selected image into stream of byte
     String streamOfImage;
     DatabaseHelper dbHelper;
-    EditText etnm,etno;
+    EditText etnm, etno;
     User user;
 
+    private boolean isCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_register );
-        etnm=findViewById( R.id.edtnm );
-        etno=findViewById( R.id.edtmob );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
+        etnm = findViewById(R.id.edtnm);
+        etno = findViewById(R.id.edtmob);
         imageViewShow = findViewById(R.id.imgpro);
 
+
     }
+
     public void cancel(View view) {
-        etno.setText( "" );
-        etnm.setText( "" );
+        etno.setText("");
+        etnm.setText("");
     }
+
     public void register(View view) {
         final DatabaseHelper dbHelper = new DatabaseHelper(this);
        /* user.setEmail(etnm.getText().toString());
@@ -52,38 +55,35 @@ public class register extends AppCompatActivity {
         etno.setText( "1" );
         etnm.setText( "12" );*/
 
-       dbHelper.addUser(new User(etnm.getText().toString(), etno.getText().toString(),"image.png"));
-        Toast.makeText( this, "data add", Toast.LENGTH_SHORT ).show();
+        dbHelper.addUser(new User(etnm.getText().toString(), etno.getText().toString(), "image.png"));
+        Toast.makeText(this, "data add", Toast.LENGTH_SHORT).show();
 
-           // User user = dbHelper.queryUser(edtEmail.getText().toString(), edtPassword.getText().toString());
+        // User user = dbHelper.queryUser(edtEmail.getText().toString(), edtPassword.getText().toString());
 
-                Bundle mBundle = new Bundle();
-                mBundle.putString("user", etnm.getText().toString());
-                Intent intent = new Intent(register.this, UserActivity.class);
-                intent.putExtras(mBundle);
-                startActivity(intent);
-           //     Toast.makeText(register.this, "Welcome " + user.getEmail(), Toast.LENGTH_SHORT).show();
+        Bundle mBundle = new Bundle();
+        mBundle.putString("user", etnm.getText().toString());
+        Intent intent = new Intent(register.this, UserActivity.class);
+        intent.putExtras(mBundle);
+        startActivity(intent);
+        //     Toast.makeText(register.this, "Welcome " + user.getEmail(), Toast.LENGTH_SHORT).show();
 
-        }
-
+    }
 
 
     public void addimage(View view) {
-        if (view.getId() == R.id.imgpro) {
+        if (view.getId() == R.id.button) {
             openChooser();
         }
 
-            }
+    }
 
     private void openChooser() {
-        AlertDialog.Builder builder
-                = new AlertDialog.Builder(getApplicationContext());
 
         View view = this.getLayoutInflater().inflate(R.layout.dialog_image_select, null);
-
         final ImageView btnCamera = view.findViewById(R.id.btnCamera);
         final ImageView btnGallery = view.findViewById(R.id.btnGallery);
 
+        AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
         final AlertDialog dialog = builder.create();
         dialog.setView(view);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
@@ -92,7 +92,7 @@ public class register extends AppCompatActivity {
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent takePicture = new Intent( MediaStore.ACTION_IMAGE_CAPTURE);
+                Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(takePicture, REQUEST_IMG);
                 isCamera = true;
                 dialog.dismiss();
@@ -102,14 +102,12 @@ public class register extends AppCompatActivity {
         btnGallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent pickPhoto = new Intent(Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 pickPhoto.setType("image/*");
                 pickPhoto.putExtra("aspectX", 1);
                 pickPhoto.putExtra("aspectY", 1);
                 pickPhoto.putExtra("scale", true);
-                pickPhoto.putExtra("outputFormat",
-                        Bitmap.CompressFormat.JPEG.toString());
+                pickPhoto.putExtra("outputFormat", Bitmap.CompressFormat.JPEG.toString());
                 startActivityForResult(pickPhoto, REQUEST_IMG);
                 isCamera = false;
                 dialog.dismiss();
@@ -147,13 +145,13 @@ public class register extends AppCompatActivity {
                     if (photo != null) {
 
                     }
-                       // streamOfImage = Usefull.getStringImage(photo);
+                    // streamOfImage = Usefull.getStringImage(photo);
                 }
                 break;
         }
     }
 
-        }
+}
 
 
 

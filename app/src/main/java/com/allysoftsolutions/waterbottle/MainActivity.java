@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import database.DatabaseHelper;
+import com.allysoftsolutions.waterbottle.database.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         btSignIn = findViewById(R.id.btSignIn);
         btSignUp = findViewById(R.id.btSignUp);
-
         edtEmail = findViewById(R.id.emailinput);
         edtPassword = findViewById(R.id.passwordinput);
 
@@ -37,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i=new Intent(getApplicationContext(),register.class);
                 startActivity(i);
+/*
                 if (!emptyValidation()) {
                     dbHelper.addUser(new User(edtEmail.getText().toString(), edtPassword.getText().toString()));
                     Toast.makeText(MainActivity.this, "Added User", Toast.LENGTH_SHORT).show();
@@ -45,7 +45,9 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(MainActivity.this, "Empty Fields", Toast.LENGTH_SHORT).show();
                 }
+                 */
             }
+
         });
         btSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
