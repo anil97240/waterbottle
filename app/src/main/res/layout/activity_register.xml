@@ -29,12 +29,17 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/colorWhite"
+        android:drawableLeft="@android:drawable/ic_dialog_email"
+        android:drawablePadding="10dp"
         android:fontFamily="sans-serif-light"
-        android:hint="Enter Name"
+        android:hint="Enter Email"
+
+
         android:inputType="textEmailAddress"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
         android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
@@ -51,12 +56,15 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/colorWhite"
+        android:drawableLeft="@android:drawable/ic_menu_call"
+        android:drawablePadding="10dp"
         android:fontFamily="sans-serif-light"
-        android:hint="Enter mobile no"
+        android:hint="Enter Mobile no"
         android:inputType="textEmailAddress"
         android:textColor="@color/colorWhite"
         android:textColorHint="@color/colorWhite"
         android:textSize="17sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.481"
@@ -67,7 +75,7 @@
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="411dp"
-        android:layout_height="341dp"
+        android:layout_height="365dp"
         android:layout_marginTop="206dp"
         android:layout_marginBottom="184dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,15 +85,15 @@
 
         <Button
             android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="44dp"
+            android:layout_height="30dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="305dp"
-            android:background="@android:drawable/ic_input_add"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="108dp"
+            android:layout_marginBottom="333dp"
+            android:background="@android:drawable/stat_sys_upload"
             android:onClick="addimage" />
 
         <ImageView
@@ -109,18 +117,19 @@
 
         <TextView
             android:id="@+id/textView"
-            android:layout_width="195dp"
+            android:layout_width="128dp"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="45dp"
-            android:layout_marginEnd="171dp"
+            android:layout_marginStart="103dp"
+            android:layout_marginEnd="180dp"
             android:layout_marginBottom="8dp"
             android:fontFamily="sans-serif-light"
             android:text="Upload image"
             android:textColor="@color/colorWhite"
             android:textColorHint="@color/colorWhite"
             android:textSize="17sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@+id/imgpro"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -150,7 +159,9 @@
             android:layout_marginBottom="59dp"
             android:background="@drawable/button_red"
             android:text="Clear"
+
             android:textColor="@color/colorWhite"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="30dp"
             tools:layout_editor_absoluteY="665dp" />
 
@@ -166,9 +177,10 @@
             android:layout_marginTop="0dp"
             android:layout_marginEnd="33dp"
             android:layout_marginBottom="117dp"
-            android:background="@drawable/button_white"
+            android:background="@color/colorWhite"
             android:text="Sign up"
             android:textColor="@color/colorPrimary"
+            android:textStyle="bold"
             tools:layout_editor_absoluteX="20dp"
             tools:layout_editor_absoluteY="599dp" />
 

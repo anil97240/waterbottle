@@ -27,11 +27,16 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
-                android:hint="Name"
+                android:hint="Enter Email"
+
+                android:drawableLeft="@android:drawable/ic_dialog_email"
+                android:drawablePadding="10dp"
+
                 android:inputType="textEmailAddress"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/passwordinput"
@@ -41,11 +46,16 @@
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
-                android:hint="Password"
+
+                android:drawableLeft="@android:drawable/ic_lock_idle_lock"
+                android:drawablePadding="10dp"
+
+                android:hint="Enter Password"
                 android:inputType="textPassword"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
-                android:textSize="17sp" />
+                android:textSize="17sp"
+                android:textStyle="bold" />
         </RelativeLayout>
 
         <Button
@@ -56,9 +66,10 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/button_white"
+            android:background="@color/colorWhite"
             android:text="Sign In"
-            android:textColor="@color/colorPrimary" />
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/btSignUp"
@@ -70,7 +81,8 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_red"
             android:text="Sign Up"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold" />
     </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>
