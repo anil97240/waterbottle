@@ -35,6 +35,8 @@ public class MainActivity extends AppCompatActivity {
         btSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(),register.class);
+                startActivity(i);
                 if (!emptyValidation()) {
                     dbHelper.addUser(new User(edtEmail.getText().toString(), edtPassword.getText().toString()));
                     Toast.makeText(MainActivity.this, "Added User", Toast.LENGTH_SHORT).show();
