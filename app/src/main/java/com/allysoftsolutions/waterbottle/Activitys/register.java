@@ -1,4 +1,4 @@
-package com.allysoftsolutions.waterbottle;
+package com.allysoftsolutions.waterbottle.Activitys;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -13,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.allysoftsolutions.waterbottle.R;
+
 import java.io.IOException;
 
 
@@ -20,40 +22,43 @@ public class register extends AppCompatActivity {
 
 
     private final int REQUEST_IMG = 1;
-    private boolean isCamera;
     ImageView imageViewShow;
     //selected image into stream of byte
-    EditText etnm,etno;
-
+    EditText etnm, etno;
+    private boolean isCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate( savedInstanceState );
-        setContentView( R.layout.activity_register );
-        etnm=findViewById( R.id.edtnm );
-        etno=findViewById( R.id.edtmob );
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_register);
+        etnm = findViewById(R.id.edtnm);
+        etno = findViewById(R.id.editTextMobile);
         imageViewShow = findViewById(R.id.imgpro);
 
     }
+
     public void cancel(View view) {
-        etno.setText( "" );
-        etnm.setText( "" );
+        etno.setText("");
+        etnm.setText("");
     }
+
     public void register(View view) {
+        Intent intent = new Intent(getApplicationContext(), VerifyPhoneActivity.class);
+        intent.putExtra("mobile", etno.getText().toString());
+        startActivity(intent);
 
 
-        }
-
+    }
 
 
     public void addimage(View view) {
-   //
+        //
         if (view.getId() == R.id.button) {
             openChooser();
             Toast.makeText(this, "click on button", Toast.LENGTH_SHORT).show();
         }
 
-            }
+    }
 
     private void openChooser() {
         AlertDialog.Builder builder
@@ -72,7 +77,7 @@ public class register extends AppCompatActivity {
         btnCamera.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent takePicture = new Intent( MediaStore.ACTION_IMAGE_CAPTURE);
+                Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(takePicture, REQUEST_IMG);
                 isCamera = true;
                 dialog.dismiss();
@@ -127,13 +132,13 @@ public class register extends AppCompatActivity {
                     if (photo != null) {
 
                     }
-                       // streamOfImage = Usefull.getStringImage(photo);
+                    // streamOfImage = Usefull.getStringImage(photo);
                 }
                 break;
         }
     }
 
-        }
+}
 
 
 

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.allysoftsolutions.waterbottle">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Activitys.Dashbord"></activity>
+        <activity android:name=".Activitys.VerifyPhoneActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Activitys.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,12 +23,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".register"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-        <activity android:name=".UserActivity">
-
-        </activity>
+            android:name=".Activitys.register"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

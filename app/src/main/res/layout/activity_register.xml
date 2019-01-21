@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/girl"
-    tools:context=".register"
+    tools:context=".Activitys.register"
     tools:layout_editor_absoluteY="50dp">
 
     <View
@@ -46,7 +46,7 @@
         app:layout_constraintVertical_bias="0.012" />
 
     <EditText
-        android:id="@+id/edtmob"
+        android:id="@+id/editTextMobile"
         android:layout_width="344dp"
         android:layout_height="47dp"
         android:layout_marginStart="20dp"
@@ -180,6 +180,7 @@
             android:textColor="@color/colorPrimary"
             android:textStyle="bold"
             tools:layout_editor_absoluteX="20dp"
+            android:onClick="register"
             tools:layout_editor_absoluteY="599dp" />
 
     </RelativeLayout>
