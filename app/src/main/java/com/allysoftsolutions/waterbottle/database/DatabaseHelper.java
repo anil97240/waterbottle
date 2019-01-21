@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import com.allysoftsolutions.waterbottle.User;
+import com.allysoftsolutions.waterbottle.Pojo.User;
 
 /**
  * Created by Zoom on 10/1/2018.

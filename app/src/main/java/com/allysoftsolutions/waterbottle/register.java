@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.allysoftsolutions.waterbottle.Pojo.User;
 import com.allysoftsolutions.waterbottle.database.DatabaseHelper;
 
 import java.io.IOException;
