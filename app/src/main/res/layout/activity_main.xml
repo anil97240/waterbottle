@@ -64,6 +64,16 @@
                 android:textStyle="bold" />
         </RelativeLayout>
 
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="160dp"
+            android:layout_marginBottom="498dp" />
+
         <Button
             android:id="@+id/btSignIn"
             android:layout_width="match_parent"
