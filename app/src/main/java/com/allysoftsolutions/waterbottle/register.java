@@ -13,9 +13,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.allysoftsolutions.waterbottle.Pojo.User;
-import com.allysoftsolutions.waterbottle.database.DatabaseHelper;
-
 import java.io.IOException;
 
 
@@ -26,10 +23,7 @@ public class register extends AppCompatActivity {
     private boolean isCamera;
     ImageView imageViewShow;
     //selected image into stream of byte
-    String streamOfImage;
-    DatabaseHelper dbHelper;
     EditText etnm,etno;
-    User user;
 
 
     @Override
@@ -46,25 +40,7 @@ public class register extends AppCompatActivity {
         etnm.setText( "" );
     }
     public void register(View view) {
-        final DatabaseHelper dbHelper = new DatabaseHelper(this);
-       /* user.setEmail(etnm.getText().toString());
-        user.setMobileno( etno.getText().toString());
-        user.setPassword( "123" );
-        user.setProfile_image("a.jpg");
-        etno.setText( "1" );
-        etnm.setText( "12" );*/
 
-       dbHelper.addUser(new User(etnm.getText().toString(), etno.getText().toString(),"image.png"));
-        Toast.makeText( this, "data add", Toast.LENGTH_SHORT ).show();
-
-           // User user = dbHelper.queryUser(edtEmail.getText().toString(), edtPassword.getText().toString());
-
-                Bundle mBundle = new Bundle();
-                mBundle.putString("user", etnm.getText().toString());
-                Intent intent = new Intent(register.this, UserActivity.class);
-                intent.putExtras(mBundle);
-                startActivity(intent);
-           //     Toast.makeText(register.this, "Welcome " + user.getEmail(), Toast.LENGTH_SHORT).show();
 
         }
 
