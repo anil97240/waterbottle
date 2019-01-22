@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setTitle("User Login");
 
 
         btSignIn = findViewById(R.id.btSignIn);
@@ -37,7 +39,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Agent(View view) {
-        Intent I=new Intent(getApplicationContext(), AgentLogin.class);
+        Toast.makeText(this, "agent", Toast.LENGTH_SHORT).show();
+
+        Intent I=new Intent(MainActivity.this, AgentLogin.class);
         startActivity(I);
+    }
+
+    public void Logout(View view) {
+
+
     }
 }

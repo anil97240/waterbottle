@@ -31,12 +31,11 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user);
-        setTitle("User Activity");
+        setTitle("Agent QRcode Scanner");
 
         //
         buttonScan = (Button) findViewById(R.id.buttonScan);
-        textViewName = (TextView) findViewById(R.id.textViewName);
-        textViewAddress = (TextView) findViewById(R.id.textViewAddress);
+
 
         //intializing scan object
         qrScan = new IntentIntegrator(this);
@@ -100,8 +99,9 @@ public class UserActivity extends AppCompatActivity implements View.OnClickListe
                     //that means the encoded format not matches
                     //in this case you can display whatever data is available on the qrcode
                     //to a toast
-                    Toast.makeText(this, result.getContents(), Toast.LENGTH_LONG).show();
-                    textViewAddress.setText(result.getContents().toString());
+                 Intent i=new Intent(getApplicationContext(),AgentDashboard.class);
+                 i.putExtra("qrcode",result.getContents());
+                 startActivity(i);
 
                 }
             }

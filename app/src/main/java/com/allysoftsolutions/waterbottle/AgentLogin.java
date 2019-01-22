@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.allysoftsolutions.waterbottle.Pojo.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -37,12 +38,13 @@ public class AgentLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agentlogin);
+        setTitle("Agent Login");
         edtmail = findViewById(R.id.edtnm);
         edtpass = findViewById(R.id.editTextMobile);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(AgentLogin.this, MainActivity.class));
+            startActivity(new Intent(AgentLogin.this, UserActivity.class));
             finish();
         }
 
@@ -87,7 +89,7 @@ public class AgentLogin extends AppCompatActivity {
                                 Toast.makeText(AgentLogin.this, "Auth Faild", Toast.LENGTH_LONG).show();
                             }
                         } else {
-                            Intent intent = new Intent(AgentLogin.this, MainActivity.class);
+                            Intent intent = new Intent(AgentLogin.this, User.class);
                             startActivity(intent);
                             finish();
                         }
