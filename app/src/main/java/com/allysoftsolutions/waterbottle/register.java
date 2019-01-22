@@ -41,9 +41,7 @@ public class register extends AppCompatActivity {
     }
 
     public void register(View view) {
-        Intent intent = new Intent(getApplicationContext(), VerifyPhoneActivity.class);
-        intent.putExtra("mobile", etno.getText().toString());
-        startActivity(intent);
+
 
 
 

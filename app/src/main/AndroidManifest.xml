@@ -11,22 +11,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Dashbord"></activity>
+        <activity android:name=".UserDashbord"></activity>
         <activity android:name=".VerifyPhoneActivity" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
 
         <activity
-            android:name=".register" android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".UserActivity"> <intent-filter>
+            android:name=".register"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".UserActivity">
 
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+        </activity>
 
 
     </application>

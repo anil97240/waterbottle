@@ -61,10 +61,8 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:digits="0123456789"
-
             android:drawableLeft="@android:drawable/ic_dialog_email"
             android:drawablePadding="20dp"
-
             android:hint="enter verification code"
             android:inputType="phone"
             android:maxLength="10"
