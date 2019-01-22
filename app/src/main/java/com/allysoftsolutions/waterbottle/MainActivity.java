@@ -10,7 +10,6 @@ import android.widget.EditText;
 public class MainActivity extends AppCompatActivity {
 
     Button btSignIn;
-
     EditText edtnumber;
 
 
@@ -35,5 +34,10 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public void Agent(View view) {
+        Intent I=new Intent(getApplicationContext(), AgentLogin.class);
+        startActivity(I);
     }
 }

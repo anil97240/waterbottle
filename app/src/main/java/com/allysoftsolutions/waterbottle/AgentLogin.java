@@ -6,63 +6,104 @@ import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.io.IOException;
 
 
-public class register extends AppCompatActivity {
+public class AgentLogin extends AppCompatActivity {
 
 
     private final int REQUEST_IMG = 1;
     ImageView imageViewShow;
     //selected image into stream of byte
-    EditText etnm, etno;
+    EditText edtmail, edtpass;
     private boolean isCamera;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        etnm = findViewById(R.id.edtnm);
-        etno = findViewById(R.id.editTextMobile);
-        imageViewShow = findViewById(R.id.imgpro);
+        setContentView(R.layout.activity_agentlogin);
+        edtmail = findViewById(R.id.edtnm);
+        edtpass = findViewById(R.id.editTextMobile);
+        //Get Firebase auth instance
+        auth = FirebaseAuth.getInstance();
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(AgentLogin.this, MainActivity.class));
+            finish();
+        }
+
 
     }
 
     public void cancel(View view) {
-        etno.setText("");
-        etnm.setText("");
+        edtpass.setText("");
+        edtmail.setText("");
     }
 
     public void register(View view) {
+        String email = edtmail.getText().toString();
+        final String password = edtpass.getText().toString();
 
-
-
-
-
-
-
-    }
-
-
-    public void addimage(View view) {
-        //
-        if (view.getId() == R.id.button) {
-            openChooser();
-            Toast.makeText(this, "click on button", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
+            return;
         }
 
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+
+
+        //authenticate user
+        auth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(AgentLogin.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        // If sign in fails, display a message to the user. If sign in succeeds
+                        // the auth state listener will be notified and logic to handle the
+                        // signed in user can be handled in the listener.
+
+                        if (!task.isSuccessful()) {
+                            // there was an error
+                            if (password.length() < 6) {
+                                edtpass.setError("Validate PAssword");
+                            } else {
+                                Toast.makeText(AgentLogin.this, "Auth Faild", Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Intent intent = new Intent(AgentLogin.this, MainActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }
+                });
     }
 
+
+    }
+
+
+
+/*
     private void openChooser() {
         AlertDialog.Builder builder
-                = new AlertDialog.Builder(register.this);
+                = new AlertDialog.Builder(AgentLogin.this);
 
         View view = this.getLayoutInflater().inflate(R.layout.dialog_image_select, null);
 
@@ -121,6 +162,7 @@ public class register extends AppCompatActivity {
                     if (!isCamera) {
                         /*photo = ThumbnailUtils.extractThumbnail(BitmapFactory.decodeFile(selectedImage.getEncodedPath()),
                                 500, 500);*/
+/*
                         try {
                             photo = MediaStore.Images.Media.getBitmap(getContentResolver(), selectedImage);
                         } catch (IOException e) {
@@ -137,8 +179,9 @@ public class register extends AppCompatActivity {
                 break;
         }
     }
+    */
 
-}
+
 
 
 
