@@ -1,4 +1,4 @@
-package com.allysoftsolutions.waterbottle.Activitys;
+package com.allysoftsolutions.waterbottle;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.allysoftsolutions.waterbottle.R;
 
 import java.io.IOException;
 
@@ -46,6 +44,10 @@ public class register extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), VerifyPhoneActivity.class);
         intent.putExtra("mobile", etno.getText().toString());
         startActivity(intent);
+
+
+
+
 
 
     }

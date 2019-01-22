@@ -3,13 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activitys.VerifyPhoneActivity">
+    tools:context=".VerifyPhoneActivity">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@color/colorPrimary"
+        android:background="@drawable/gradient_bg"
         android:orientation="horizontal">
 
         <ImageView
@@ -33,6 +33,7 @@
         android:layout_height="match_parent"
         android:layout_below="@id/imageView"
         android:orientation="vertical"
+
         android:padding="20dp">
 
         <TextView
@@ -54,25 +55,30 @@
 
         <EditText
             android:id="@+id/editTextCode"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/progressbar"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
             android:digits="0123456789"
-            android:drawablePadding="10dp"
+
+            android:drawableLeft="@android:drawable/ic_dialog_email"
+            android:drawablePadding="20dp"
+
             android:hint="enter verification code"
             android:inputType="phone"
-            android:maxLength="10" />
+            android:maxLength="10"
+            android:textAlignment="center"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/buttonSignIn"
-            android:layout_width="wrap_content"
+            android:layout_width="248dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/editTextCode"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/image_choice"
             android:text="Sign In"
             android:textAllCaps="false"
             android:textColor="#cdd8f1" />
